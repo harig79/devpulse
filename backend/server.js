@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import githubRoutes from './routes/github.js';
 
-
+import leetcodeRoutes from './routes/leetcode.js';
 
 
 
@@ -42,6 +42,7 @@ app.get('/',(req,res)=>{
 });
 
 
+
 app.get('/health', (req, res) => {
   res.json({ status: 'healthy', uptime: process.uptime() });
 });
@@ -50,6 +51,8 @@ app.get('/health', (req, res) => {
 
 // API ROUTES
 app.use('/api/github',githubRoutes);
+app.use('/api/leetcode',leetcodeRoutes);
+
 
 
 
