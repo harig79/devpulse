@@ -5,6 +5,8 @@ import githubRoutes from './routes/github.js';
 
 import leetcodeRoutes from './routes/leetcode.js';
 
+import dashboardRoutes from './routes/dashboard.js';
+
 
 
 
@@ -52,8 +54,7 @@ app.get('/health', (req, res) => {
 // API ROUTES
 app.use('/api/github',githubRoutes);
 app.use('/api/leetcode',leetcodeRoutes);
-
-
+app.use('/api/dashboard',dashboardRoutes);
 
 
 
