@@ -33,7 +33,13 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: '*',
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:5174',
+      'https://devpulse-fwi4.vercel.app',
+      'https://devvpulse.online',
+    ],
+    credentials: true,
   })
 );
 
