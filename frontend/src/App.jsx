@@ -1,7 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
+import About from './pages/About'
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-blue-50 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-blue-600">🚀 DevPulse Frontend Ready!</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard/:github/:leetcode" element={<Dashboard />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   )
 }

@@ -1,17 +1,17 @@
-import { Loader2 } from 'lucide-react'
- 
+import { Loader2 } from 'lucide-react';
+
 const variants = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm',
-  secondary: 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50',
-  danger: 'bg-red-600 text-white hover:bg-red-700 shadow-sm',
-}
- 
+  primary:   'bg-blue-600 text-white hover:bg-blue-700 shadow-sm',
+  secondary: 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700',
+  danger:    'bg-red-600 text-white hover:bg-red-700 shadow-sm',
+};
+
 const sizes = {
   sm: 'px-3 py-1.5 text-sm',
   md: 'px-5 py-2.5 text-sm',
   lg: 'px-8 py-3 text-base',
-}
- 
+};
+
 export default function Button({
   children,
   onClick,
@@ -39,6 +39,5 @@ export default function Button({
       {loading && <Loader2 className="w-4 h-4 animate-spin" />}
       {children}
     </button>
-  )
+  );
 }
- 
