@@ -36,7 +36,6 @@ app.use(
     origin: [
       'http://localhost:5173',
       'http://localhost:5174',
-      'https://devpulse-fwi4.vercel.app',
       'https://devvpulse.online',
     ],
     credentials: true,
