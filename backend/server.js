@@ -33,15 +33,21 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: [
-      'http://localhost:5173',
-      'http://localhost:5174',
-      'https://devvpulse.online',
-    ],
+    origin: (origin, callback) => {
+      const allowed = [
+        /localhost:(5173|5174)/,
+        /devpulse.*\.vercel\.app$/,
+        /devvpulse\.online$/,
+      ];
+      if (!origin || allowed.some((r) => r.test(origin))) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
-
 
 app.use(express.json());
 
